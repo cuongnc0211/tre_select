@@ -89,7 +89,6 @@ export class TreSelect {
       this.addTag(label, value);
       this.input.value = '';
       this.filterOptions();
-
     });
   }
 
@@ -97,21 +96,22 @@ export class TreSelect {
     const tag = document.createElement('span');
     tag.className = 'bg-green-100 text-green-800 text-sm px-2 py-1 rounded flex items-center gap-1';
     tag.textContent = label;
-
+  
     const remove = document.createElement('button');
     remove.type = 'button';
     remove.textContent = '×';
     remove.className = 'text-red-500 hover:text-red-700 font-bold';
+  
     remove.addEventListener('click', () => {
       tag.remove();
       this.selectEl.querySelector(`option[value="${value}"]`).selected = false;
       this.selected.delete(value);
       this.filterOptions();
     });
-
+  
     tag.appendChild(remove);
     this.input.parentNode.insertBefore(tag, this.input);
-  }
+  }  
 
   filterOptions() {
     const query = this.input.value.toLowerCase();
