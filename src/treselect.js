@@ -12,8 +12,17 @@ export class TreSelect {
 
   init() {
     this.selectEl.style.display = 'none';
+    this.loadFallbackCSSIfTailwindMissing();
     this.buildUI();
     this.bindEvents();
+  }
+
+  applyInputClasses(originalInput, alternativeInput, fallbackClass = '') {
+    if (originalInput.classList.length > 0) {
+      originalInput.classList.forEach(cls => alternativeInput.classList.add(cls));
+    } else {
+      alternativeInput.classList.add(fallbackClass);
+    }
   }
 
   buildUI() {
@@ -28,6 +37,7 @@ export class TreSelect {
     this.input = document.createElement('input');
     this.input.type = 'text';
     this.input.className = 'flex-1 outline-none';
+    this.applyInputClasses(this.selectEl, this.input);
     inputContainer.appendChild(this.input);
 
     // Dropdown
@@ -100,7 +110,7 @@ export class TreSelect {
     const remove = document.createElement('button');
     remove.type = 'button';
     remove.textContent = '×';
-    remove.className = 'text-red-500 hover:text-red-700 font-bold';
+    remove.className = 'text-red-500 hover:text-red-700 font-bold mx-1';
   
     remove.addEventListener('click', () => {
       tag.remove();
@@ -127,5 +137,51 @@ export class TreSelect {
   
       li.classList.toggle('hidden', !shouldShow);
     });
-  }  
+  }
+
+  loadFallbackCSSIfTailwindMissing() {
+    const testEl = document.createElement("div");
+    testEl.className = "hidden"; // Tailwind sets this to display: none
+    document.body.appendChild(testEl);
+  
+    const computed = window.getComputedStyle(testEl);
+    const tailwindPresent = computed.display === "none";
+  
+    document.body.removeChild(testEl);
+  
+    if (!tailwindPresent) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "/public/treselect-fallback.css"; // adjust path if needed
+      document.head.appendChild(link);
+    }
+  }
+
+  copyInputStyles(sourceInput, targetDiv) {
+    const computed = window.getComputedStyle(sourceInput);
+  
+    const propsToCopy = [
+      'font',
+      'font-size',
+      'font-family',
+      'font-weight',
+      'line-height',
+      'letter-spacing',
+      'color',
+      'background-color',
+      'border',
+      'border-radius',
+      'padding',
+      'margin',
+      'width',
+      'height',
+      'box-sizing',
+      'outline',
+      'appearance',
+    ];
+  
+    propsToCopy.forEach(prop => {
+      targetDiv.style[prop] = computed.getPropertyValue(prop);
+    });
+  }
 }
