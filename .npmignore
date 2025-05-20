@@ -1,0 +1,5 @@
+demo/
+*.log
+.vscode/
+src/
+vite.config.js

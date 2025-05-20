@@ -1,0 +1,108 @@
+/* == TreSelect Fallback Styles == */
+
+.relative { position: relative; }
+
+.w-full { width: 100%; }
+
+.flex { display: flex; }
+
+.flex-wrap { flex-wrap: wrap; }
+
+.items-center { align-items: center; }
+
+.border { border: 1px solid #d1d5db; } /* gray-300 */
+
+.rounded { border-radius: 0.25rem; }
+
+.p-10 { padding: 2.5rem; }
+
+.bg-gray-50 { background-color: #f9fafb; }
+
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+
+.font-bold { font-weight: 700; }
+
+.mb-4 { margin-bottom: 1rem; }
+
+.block { display: block; }
+
+.mb-2 { margin-bottom: 0.5rem; }
+
+.font-medium { font-weight: 500; }
+
+.text-gray-700 { color: #374151; }
+
+.hidden { display: none; }
+
+.p-2 { padding: 0.5rem; }
+
+.gap-2 { gap: 0.5rem; }
+
+.flex-1 { flex: 1 1 0%; }
+
+.outline-none { outline: none; }
+
+.absolute { position: absolute; }
+
+.z-10 { z-index: 10; }
+
+.bg-white { background-color: #ffffff; }
+
+.mt-1 { margin-top: 0.25rem; }
+
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+              0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.max-h-60 { max-height: 15rem; }
+
+.overflow-y-auto { overflow-y: auto; }
+
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+.hover\:bg-gray-100:hover { background-color: #f3f4f6; }
+
+.cursor-pointer { cursor: pointer; }
+
+.bg-green-100 { background-color: #d1fae5; }
+
+.text-green-800 { color: #065f46; }
+
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+
+.text-red-500 { color: #ef4444; }
+
+.hover\:text-red-700:hover { color: #b91c1c; }
+
+.inline { display: inline; }
+
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.mx-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+
+.text-red-500 { color: #ef4444; }
+.hover\:text-red-700:hover { color: #b91c1c; }
+
+.font-bold { font-weight: 700; }
+
+
+.treselect menu, ol, ul {
+  list-style: None;
+  padding: 0;
+}
+
+.treselect input {
+  border: none;
+}
+
+.treselect button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+}
