@@ -9,7 +9,7 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        exports: "named"
+        globals: {},
       }
     }
   }
