@@ -156,32 +156,4 @@ export class TreSelect {
       document.head.appendChild(link);
     }
   }
-
-  copyInputStyles(sourceInput, targetDiv) {
-    const computed = window.getComputedStyle(sourceInput);
-  
-    const propsToCopy = [
-      'font',
-      'font-size',
-      'font-family',
-      'font-weight',
-      'line-height',
-      'letter-spacing',
-      'color',
-      'background-color',
-      'border',
-      'border-radius',
-      'padding',
-      'margin',
-      'width',
-      'height',
-      'box-sizing',
-      'outline',
-      'appearance',
-    ];
-  
-    propsToCopy.forEach(prop => {
-      targetDiv.style[prop] = computed.getPropertyValue(prop);
-    });
-  }
 }

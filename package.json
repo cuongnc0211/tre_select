@@ -1,0 +1,27 @@
+{
+  "name": "treselect",
+  "version": "0.1.0",
+  "description": "A lightweight Select2 alternative friendly with Rails and Stimulus.",
+  "main": "dist/treselect.umd.js",
+  "module": "dist/treselect.es.js",
+  "exports": {
+    "import": "./dist/treselect.es.js",
+    "require": "./dist/treselect.umd.js"
+  },
+  "keywords": [
+    "select2",
+    "multi-select",
+    "stimulus",
+    "tailwindcss",
+    "rails",
+    "dropdown"
+  ],
+  "author": "cuongnc0211",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "scripts": {
+    "build": "vite build"
+  }
+}
